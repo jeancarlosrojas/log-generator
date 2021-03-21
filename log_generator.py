@@ -141,8 +141,18 @@ def main(argv):
 
         if (toLog == ''):
             continue
-
-        logger.debug(toLog[:-1])
+        #Add 5 different levels that each respectively indicate the type of event
+        x=random.randint(0,4)
+        if(x==0):
+          logger.debug(toLog[:-1])
+        elif(x==1):
+          logger.info(toLog[:-1])                                                                                                                                                
+        elif(x==2):
+          logger.warning(toLog[:-1])
+        elif(x==3):
+          logger.critical(toLog[:-1])
+        else:
+          logger.error(toLog[:-1]) 
         print(toLog[:-1])
 
         if (iterations > 0):
